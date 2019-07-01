@@ -30,13 +30,14 @@ public class EditNoteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_note);
         NoteEntity note = (NoteEntity) getIntent().getSerializableExtra(Constants.NOTE_EXTRA);
         newlyCreated = getIntent().getBooleanExtra(Constants.NEWLY_CREATED_EXTRA,true);
-        drawNote(note);
 
         backButton = findViewById(R.id.backButton);
         pinButton = findViewById(R.id.pinButton);
         noteContent = findViewById(R.id.task);
         noteName = findViewById(R.id.NoteName);
         editDate = findViewById(R.id.lastEdit);
+        drawNote(note);
+
         model = ViewModelProviders.of(this).get(EditNoteViewModel.class);
         model.setNote(note);
         model.getPinIconResource().observe(this, new Observer<Integer>() {
@@ -55,6 +56,7 @@ public class EditNoteActivity extends AppCompatActivity {
                 } else{
                     model.update(noteName.getText().toString(), noteContent.getText().toString());
                 }
+                finish();
             }
         });
 

@@ -22,7 +22,7 @@ public class EditNoteViewModel extends AndroidViewModel {
         super(application);
 
         dao = NotesDatabase.getInstance(application).dao();
-
+        pinIconRes = new MutableLiveData<>();
     }
 
     public void setNote(NoteEntity note){

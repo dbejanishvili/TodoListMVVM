@@ -84,8 +84,14 @@ public class NoteEntity implements Serializable {
         this.editDate = new Date(System.currentTimeMillis());
     }
 
+    public void setEditDate(Date date){
+        editDate = date;
+    }
     public Date getEditDate() {
         return editDate;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 }

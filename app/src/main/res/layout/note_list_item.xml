@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="180dp"
     android:layout_height="wrap_content"
-    android:maxHeight="100dp">
+    android:maxHeight="100dp"
+    android:background="@drawable/note_item_border">
 
     <TextView
         android:id="@+id/noteItemName"

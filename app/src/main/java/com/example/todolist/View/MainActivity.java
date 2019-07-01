@@ -56,13 +56,14 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(@Nullable List<NoteEntity> noteEntities) {
                 ArrayList<NoteEntity> unpinned = new ArrayList<>();
                 ArrayList<NoteEntity> pinned = new ArrayList<>();
+                if(noteEntities == null) return;
 
                 for (NoteEntity note : noteEntities) {
                     if (note.isPinned()) pinned.add(note);
                     else unpinned.add(note);
                 }
                 pinnedNoteAdapter.updateData(pinned);
-                pinnedNoteAdapter.updateData(unpinned);
+                unpinnedNoteAdapter.updateData(unpinned);
             }
         });
         searchField.setOnKeyListener(new View.OnKeyListener() {
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,EditNoteActivity.class);
                 intent.putExtra(Constants.NOTE_EXTRA,new NoteEntity());
-                intent.putExtra(Constants.NOTE_EXTRA,true);
+                intent.putExtra(Constants.NEWLY_CREATED_EXTRA,true);
                 startActivity(intent);
             }
         });
