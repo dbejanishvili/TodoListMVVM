@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TodoList</string>
+    <string name="title_activity_edit_note">EditNoteActivity</string>
+    <string name="notename">NoteName</string>
+    <string name="list_item">+ List item</string>
+    <string name="last_edited">Last edited</string>
+    <string name="add_a_new_note">+  Add a new Note ...</string>
+</resources>
